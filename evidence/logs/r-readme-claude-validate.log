@@ -1,0 +1,22 @@
+Validating plugin manifest: /root/xentropy/xentropy-plugins/plugins/xentropy/.claude-plugin/plugin.json
+
+Provides:
+
+  ❯ mcpServers: xentropy http https://api.xentropy.ai/mcp
+  ❯ skills: xentropy:xentropy-artifact-studio
+  ❯ skills: xentropy:xentropy-artifacts
+  ❯ skills: xentropy:xentropy-connections
+  ❯ skills: xentropy:xentropy-dashboards
+  ❯ skills: xentropy:xentropy-google-analytics
+  ❯ skills: xentropy:xentropy-google-drive
+  ❯ skills: xentropy:xentropy-google-sheets
+  ❯ commands: xentropy:chart
+
+Plugin directory checks for /root/xentropy/xentropy-plugins/plugins/xentropy. The plugin directory is the catalog that plugins are submitted to; this is a subset of what it runs.
+
+✔ These checks found nothing to report
+
+The directory also runs a safety scan and a policy review that this command does not.
+
+✔ Validation passed
+exit_code=0
