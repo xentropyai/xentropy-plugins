@@ -1,0 +1,17 @@
+{
+  "name": "xentropy",
+  "owner": {
+    "name": "Xentropy",
+    "url": "https://xentropy.ai"
+  },
+  "metadata": {
+    "description": "Official Xentropy plugins."
+  },
+  "plugins": [
+    {
+      "name": "xentropy",
+      "source": "./plugins/xentropy",
+      "description": "Create data-backed charts, tables and dashboards from your own data with Xentropy, through the Xentropy remote MCP server."
+    }
+  ]
+}

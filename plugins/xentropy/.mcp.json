@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "xentropy": {
+      "type": "http",
+      "url": "https://api.xentropy.ai/mcp"
+    }
+  }
+}

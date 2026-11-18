@@ -1,0 +1,18 @@
+{
+  "name": "xentropy",
+  "displayName": "Xentropy",
+  "version": "0.1.0",
+  "description": "Create data-backed charts, tables and dashboards from your own data with Xentropy, through the Xentropy remote MCP server.",
+  "author": {
+    "name": "Xentropy",
+    "url": "https://xentropy.ai"
+  },
+  "homepage": "https://xentropy.ai",
+  "documentationUrl": "https://docs.xentropy.ai/agents",
+  "supportUrl": "https://xentropy.ai/legal#contact",
+  "privacyPolicyUrl": "https://xentropy.ai/privacy",
+  "termsOfServiceUrl": "https://xentropy.ai/terms",
+  "icon": "./assets/icon.png",
+  "license": "MIT",
+  "keywords": ["charts", "dashboards", "data", "mcp"]
+}

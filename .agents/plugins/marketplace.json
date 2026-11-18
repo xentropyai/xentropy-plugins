@@ -1,0 +1,20 @@
+{
+  "name": "xentropy",
+  "interface": {
+    "displayName": "Xentropy"
+  },
+  "plugins": [
+    {
+      "name": "xentropy",
+      "source": {
+        "source": "local",
+        "path": "./plugins/xentropy"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

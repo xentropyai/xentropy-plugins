@@ -1,0 +1,11 @@
+# Display metadata for OpenAI Codex and ChatGPT (agent harnesses P4). Field names follow the
+# Codex agents/openai.yaml format; not yet confirmed against a live plugin install.
+interface:
+  display_name: "Xentropy"
+  short_description: "Charts, tables and dashboards from your own data"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.png"
+  brand_color: "#15EAB2"
+  default_prompt: "Make a bar chart of monthly revenue from my data with Xentropy."
+policy:
+  allow_implicit_invocation: true

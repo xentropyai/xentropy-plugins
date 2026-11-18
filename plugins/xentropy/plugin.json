@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "xentropy",
+  "version": "0.1.0",
+  "description": "Create data-backed charts, tables and dashboards from your own data with Xentropy, through the Xentropy remote MCP server."
+}

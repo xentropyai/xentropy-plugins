@@ -1,0 +1,15 @@
+{
+  "name": "xentropy-plugins",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.2"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test test/*.test.mjs",
+    "build:openai-zip": "node scripts/build-openai-zip.mjs",
+    "sync-skills": "node scripts/sync-skills.mjs"
+  }
+}
