@@ -1,0 +1,7 @@
+step=b-p3-repo-red commit=894bc15 started=2026-11-18T14:36:27Z (validate.mjs and build-openai-zip.mjs not yet present)
+    throw new ERR_MODULE_NOT_FOUND(
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/root/xentropy/xentropy-plugins/scripts/validate.mjs' imported from /root/xentropy/xentropy-plugins/test/repo.test.mjs
+  code: 'ERR_MODULE_NOT_FOUND',
+ℹ tests 1
+ℹ pass 0
+exit_code=1
