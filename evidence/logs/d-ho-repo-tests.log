@@ -1,0 +1,18 @@
+# 2026-11-18T15:19:37Z 4e4311c cwd=/root/xentropy/xentropy-plugins-ho
+# $ node --test test/*.test.mjs
+▶ xentropy-plugins repo (H-B P3/P4)
+  ✔ [H-B20] Given the repo, When validated, Then every manifest and skill passes (80.39494ms)
+  ✔ [H-B21] Given broken manifests, When validated, Then each rule reports (194.90171ms)
+  ✔ [H-B22] Given bad skills, When validated, Then the agentskills rules fail (2.24754ms)
+  ✔ [H-B23] Given the plugin folder, When the OpenAI zip is built, Then it holds the portable manifests and skills but no Claude dotfiles, hooks or .app.json (100.665106ms)
+  ✔ [H-B24] Given excluded paths, When filtered, Then hooks, .app.json and dotfiles are dropped (1.157555ms)
+✔ xentropy-plugins repo (H-B P3/P4) (380.949418ms)
+ℹ tests 5
+ℹ suites 1
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 899.262113
+# exit=0

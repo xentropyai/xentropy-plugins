@@ -1,0 +1,50 @@
+// Xentropy for OpenClaw: merge into openclaw.json (JSON5). Docs: https://docs.openclaw.ai/tools/mcp
+// Guide: https://docs.xentropy.ai/agents/clients/openclaw
+//
+// Variant A (default): OAuth. Same as
+//   openclaw mcp add xentropy --url https://api.xentropy.ai/mcp --transport streamable-http --auth oauth
+// then sign in with `openclaw mcp login xentropy`. The transport must be set: OpenClaw defaults to SSE.
+{
+  "mcp": {
+    "servers": {
+      "xentropy": {
+        "url": "https://api.xentropy.ai/mcp",
+        "transport": "streamable-http",
+        "auth": "oauth"
+      }
+// Variant B (headless, read-only): replace the "xentropy" entry above with the block below
+// (remove one "// " per line). Put a scoped API key from https://xentropy.ai/settings/api-keys
+// in the Gateway's environment as XENTROPY_API_KEY, never in this file. toolFilter.include keeps
+// the agent to read-only tools; add the same toolFilter to Variant A for read-only OAuth use.
+// BEGIN header variant
+//      "xentropy": {
+//        "url": "https://api.xentropy.ai/mcp",
+//        "transport": "streamable-http",
+//        "headers": { "Authorization": "Bearer ${XENTROPY_API_KEY}" },
+//        "toolFilter": {
+//          "include": [
+//            "artifacts_capabilities",
+//            "artifacts_list",
+//            "artifacts_get",
+//            "artifacts_versions",
+//            "artifacts_jobs_get",
+//            "artifacts_outputs_list",
+//            "artifacts_output_get",
+//            "dashboards_capabilities",
+//            "dashboards_list",
+//            "dashboards_get",
+//            "connections_list",
+//            "data_providers_list",
+//            "data_datasets_list",
+//            "data_datasets_get",
+//            "data_preview",
+//            "data_schema",
+//            "list_skills",
+//            "get_skill"
+//          ]
+//        }
+//      }
+// END header variant
+    }
+  }
+}

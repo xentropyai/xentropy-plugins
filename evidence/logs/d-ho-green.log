@@ -1,0 +1,38 @@
+# 2026-11-18T15:17:36Z 4e4311c cwd=/root/xentropy/xentropy-plugins-ho
+# $ node --test hermes/test/*.test.mjs openclaw/test/*.test.mjs
+▶ Hermes optional-mcps manifest (H-D P6)
+  ✔ [H-D1] Given the manifest draft, When parsed as YAML and checked with the upstream catalog rules, Then it is valid (503.071187ms)
+  ✔ [H-D2] Given default_enabled, When compared with the Xentropy tool snapshot, Then every tool exists, none is destructive, and reads plus core writes are on (398.471648ms)
+  ✔ [H-D3] Given every Hermes file, When URLs are listed, Then the endpoint and source are exact and only loopback uses http (391.887839ms)
+  ✔ [H-D4] Given broken manifests, When checked, Then each upstream rule reports (395.381147ms)
+✔ Hermes optional-mcps manifest (H-D P6) (1691.443919ms)
+▶ Hermes config example (H-D P6)
+  ✔ [H-D5] Given the OAuth variant, When parsed, Then mcp_servers.xentropy has the url and auth oauth and no headers (210.207895ms)
+  ✔ [H-D6] Given the commented header variant, When uncommented, Then it sends Bearer ${XENTROPY_API_KEY} with trust untrusted and no literal key (395.623322ms)
+✔ Hermes config example (H-D P6) (606.256877ms)
+▶ Hermes README and PR (H-D P6)
+  ✔ [H-D7] Given the README, When read, Then it covers login, the well-known index on the web origin and the tap layout (0.652434ms)
+  ✔ [H-D8] Given PR.md, When read, Then it has a conventional title, the catalog-closed warning and owner steps (0.254114ms)
+  ✔ [H-D9] Given the plugin-catalog draft, When parsed, Then it points at the portable package and pins nothing yet (491.812961ms)
+✔ Hermes README and PR (H-D P6) (493.229077ms)
+▶ ClawHub skill xentropy (H-D P7)
+  ✔ [H-D10] Given the skill, When checked with the repo agentskills rules (setup section aside), Then it passes (9.664002ms)
+  ✔ [H-D11] Given the frontmatter, When read, Then metadata.openclaw names XENTROPY_API_KEY as primaryEnv with no hard requirements (83.015935ms)
+  ✔ [H-D12] Given the setup section, When read, Then it has the exact add and login commands for the user (0.445832ms)
+  ✔ [H-D13] Given skills that run things, When checked, Then the no-scripts rule reports each (13.717757ms)
+  ✔ [H-D14] Given the generated artifacts skill, When the ClawHub skill is rebuilt, Then the committed SKILL.md has no drift (0.851985ms)
+✔ ClawHub skill xentropy (H-D P7) (109.841005ms)
+▶ OpenClaw config example and plugin (H-D P7)
+  ✔ [H-D15] Given openclaw.json.example, When parsed, Then mcp.servers.xentropy is streamable-http with OAuth and no headers (83.126331ms)
+  ✔ [H-D16] Given the commented header variant, When uncommented, Then it sends the env key and only read-only tools (3.551305ms)
+  ✔ [H-D17] Given every OpenClaw file, When URLs are listed, Then only loopback uses http, and the plugin manifest stays deferred with notes (1.278218ms)
+✔ OpenClaw config example and plugin (H-D P7) (88.447115ms)
+ℹ tests 17
+ℹ suites 5
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4497.488755
+# exit=0

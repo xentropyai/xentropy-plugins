@@ -1,0 +1,86 @@
+# Nous-approved MCP catalog entry.
+# Presence in this directory = approval. Merged via PR review.
+manifest_version: 1
+
+name: xentropy
+description: 'Xentropy: charts, tables and dashboards from your connected data.'
+source: https://docs.xentropy.ai/agents/clients/hermes
+
+# Official vendor-hosted remote MCP (URL-only: Hermes never spawns a local
+# process for this entry), stateless Streamable HTTP. Native OAuth 2.1 with
+# PKCE (S256) for public clients: Client ID Metadata Documents and Dynamic
+# Client Registration are both supported, with RFC 9728 protected-resource
+# metadata pointing at the authorization server. Hermes's MCP client and
+# mcp_oauth_manager handle discovery, PKCE, token exchange and refresh.
+# Headless hosts can use a scoped API key instead (see the source page).
+transport:
+  type: http
+  url: https://api.xentropy.ai/mcp
+
+auth:
+  type: oauth
+
+# Curated default: reads plus the core non-destructive writes (create, edit,
+# refresh and export charts, tables and dashboards; save datasets). Left
+# unchecked and available via `hermes mcp configure xentropy`: deletes,
+# sharing and public publishing, writes to Google Sheets and Drive, new
+# connections, uploads, refresh schedules and the multi-source data-plan
+# tools. Which tools a connection lists also depends on the scopes the user
+# approves at sign-in.
+tools:
+  default_enabled:
+    - analytics_compatibility
+    - analytics_metadata
+    - artifacts_capabilities
+    - artifacts_create
+    - artifacts_export
+    - artifacts_get
+    - artifacts_jobs_cancel
+    - artifacts_jobs_get
+    - artifacts_list
+    - artifacts_output_get
+    - artifacts_outputs_list
+    - artifacts_refresh
+    - artifacts_restore
+    - artifacts_trash
+    - artifacts_update
+    - artifacts_versions
+    - connections_list
+    - dashboards_capabilities
+    - dashboards_create
+    - dashboards_get
+    - dashboards_list
+    - dashboards_restore
+    - data_datasets_bind
+    - data_datasets_create
+    - data_datasets_discover
+    - data_datasets_get
+    - data_datasets_list
+    - data_preview
+    - data_preview_definition
+    - data_providers_list
+    - data_schema
+    - drive_download
+    - drive_export
+    - drive_list
+    - drive_metadata
+    - get_skill
+    - list_skills
+    - sheets_metadata
+    - sheets_read
+
+# Composer-suggestion triggers (desktop brand pills).
+suggest:
+  keywords:
+    - xentropy
+  hosts:
+    - xentropy.ai
+
+post_install: |
+  On first connection Hermes opens a browser to authorize with
+  Xentropy (or run `hermes mcp login xentropy`). Approve access,
+  then restart the session so tools load.
+
+  Sharing, publishing and delete tools are off by default; turn them
+  on with `hermes mcp configure xentropy`. For hosts without a browser,
+  see https://docs.xentropy.ai/agents/clients/hermes for the API key setup.

@@ -1,0 +1,50 @@
+# Xentropy for Hermes Agent: add one of these blocks to ~/.hermes/config.yaml.
+# Docs: https://docs.xentropy.ai/agents/clients/hermes
+#
+# The server name must stay `xentropy`: Hermes then names the tools
+# mcp_xentropy_<tool> and the toolset mcp-xentropy, which the Xentropy skills
+# declare in metadata.hermes.requires_toolsets.
+
+# Variant A (default): OAuth. Run `hermes mcp login xentropy` once, approve
+# access in the browser, then start a new session (or /reload-mcp).
+# Hermes tries a Client ID Metadata Document first, then Dynamic Client
+# Registration, with a loopback callback on ports 27890-27894.
+mcp_servers:
+  xentropy:
+    url: https://api.xentropy.ai/mcp
+    auth: oauth
+    # Optional: approve every call that is not read-only (see Variant B).
+    # trust: untrusted
+
+# Variant B (headless: servers, cron, CI): a scoped API key instead of OAuth.
+# 1. Create a key with the Agent preset at https://xentropy.ai/settings/api-keys
+# 2. Put it in ~/.hermes/.env as XENTROPY_API_KEY=xak_EXAMPLE (never in this file)
+# 3. Replace the Variant A block above with this one (remove one "# " per line).
+#    Hermes resolves ${XENTROPY_API_KEY} from the environment and ~/.hermes/.env
+#    when it connects.
+#    trust: untrusted asks before every call that is not annotated read-only.
+#    Where nobody can answer (cron, unattended runs) such calls fail closed,
+#    so give an unattended key read-only scopes or narrow tools.include.
+# BEGIN header variant
+# mcp_servers:
+#   xentropy:
+#     url: https://api.xentropy.ai/mcp
+#     headers:
+#       Authorization: "Bearer ${XENTROPY_API_KEY}"
+#     trust: untrusted
+#     tools:
+#       include:
+#         - artifacts_list
+#         - artifacts_get
+#         - artifacts_create
+#         - artifacts_update
+#         - artifacts_export
+#         - artifacts_jobs_get
+#         - artifacts_outputs_list
+#         - artifacts_output_get
+#         - connections_list
+#         - data_datasets_list
+#         - data_preview
+#         - get_skill
+#         - list_skills
+# END header variant
