@@ -1,0 +1,38 @@
+# Written 2026-11-18 (agent harnesses P0/P3). It has not run yet: the repo is not pushed.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Manifests, skill rules and credential patterns
+        run: node scripts/validate.mjs
+      - name: Repo tests
+        run: node --test test/*.test.mjs
+      - name: OpenAI directory zip
+        run: node scripts/build-openai-zip.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xentropy-openai-zip
+          path: dist/xentropy-openai.zip
+      - name: Claude Code strict validation
+        run: npx --yes @anthropic-ai/claude-code@2.1.327 plugin validate --strict plugins/xentropy && npx --yes @anthropic-ai/claude-code@2.1.327 plugin validate --strict .
+  gitleaks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: gitleaks (full history)
+        run: docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:v8.21.2 detect --source /repo --redact --verbose
