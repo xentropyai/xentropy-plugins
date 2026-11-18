@@ -1,0 +1,73 @@
+✖ [H-R1] Given a Hermes tap on this repo, when it reads skills/ at the root, then the root mirror equals plugins/xentropy/skills byte for byte (9.77548ms)
+✖ [H-R2] Given `pi install git:github.com/xentropyai/xentropy-plugins`, when pi reads the root package.json, then it finds the pi extension and skills under pi/ (66.94691ms)
+✖ [H-R3] Given the repo test script, when CI runs it, then the Hermes and OpenClaw suites run too (2.474772ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 510.026509
+
+✖ failing tests:
+
+test at test/root-layout.test.mjs:15:1
+✖ [H-R1] Given a Hermes tap on this repo, when it reads skills/ at the root, then the root mirror equals plugins/xentropy/skills byte for byte (9.77548ms)
+  AssertionError [ERR_ASSERTION]: root skills/ is missing
+      at TestContext.<anonymous> (file:///root/xentropy/xentropy-plugins/test/root-layout.test.mjs:18:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at test/root-layout.test.mjs:26:1
+✖ [H-R2] Given `pi install git:github.com/xentropyai/xentropy-plugins`, when pi reads the root package.json, then it finds the pi extension and skills under pi/ (66.94691ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - [
+  -   'pi'
+  - ]
+  
+      at TestContext.<anonymous> (file:///root/xentropy/xentropy-plugins/test/root-layout.test.mjs:29:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: [ 'pi' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/root-layout.test.mjs:35:1
+✖ [H-R3] Given the repo test script, when CI runs it, then the Hermes and OpenClaw suites run too (2.474772ms)
+  AssertionError [ERR_ASSERTION]: hermes/test/*.test.mjs
+      at TestContext.<anonymous> (file:///root/xentropy/xentropy-plugins/test/root-layout.test.mjs:38:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+exit_code=1

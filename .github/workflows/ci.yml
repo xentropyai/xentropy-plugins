@@ -18,8 +18,8 @@ jobs:
           node-version: 22
       - name: Manifests, skill rules and credential patterns
         run: node scripts/validate.mjs
-      - name: Repo tests
-        run: node --test test/*.test.mjs
+      - name: Repo, Hermes and OpenClaw tests
+        run: npm test
       - name: OpenAI directory zip
         run: node scripts/build-openai-zip.mjs
       - uses: actions/upload-artifact@v4
