@@ -1,0 +1,26 @@
+npm notice
+npm notice 📦  @xentropy/pi@0.1.0
+npm notice Tarball Contents
+npm notice 399B CHANGELOG.md
+npm notice 1.1kB LICENSE
+npm notice 6.2kB README.md
+npm notice 319B extensions/xentropy.ts
+npm notice 1.4kB package.json
+npm notice 1.7kB skills/xentropy-artifact-studio/references/sharing.md
+npm notice 2.4kB skills/xentropy-artifact-studio/references/tool-workflows.md
+npm notice 4.0kB skills/xentropy-artifact-studio/SKILL.md
+npm notice 2.3kB src/config.ts
+npm notice 8.9kB src/extension.ts
+npm notice 4.4kB src/mapping.ts
+npm notice Tarball Details
+npm notice name: @xentropy/pi
+npm notice version: 0.1.0
+npm notice filename: xentropy-pi-0.1.0.tgz
+npm notice package size: 12.4 kB
+npm notice unpacked size: 33.1 kB
+npm notice shasum: 4615968aa81738913c2e2c048a8110ff775af28b
+npm notice integrity: sha512-uFV6R4VHlQlIH[...]qOpguNPhNRRgg==
+npm notice total files: 11
+npm notice
+xentropy-pi-0.1.0.tgz
+exit=0

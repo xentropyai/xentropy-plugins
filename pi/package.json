@@ -1,0 +1,63 @@
+{
+  "name": "@xentropy/pi",
+  "version": "0.1.0",
+  "description": "Xentropy for the pi coding agent: Xentropy MCP tools (artifacts, dashboards, data) and skills inside pi.",
+  "license": "MIT",
+  "author": "Xentropy",
+  "homepage": "https://docs.xentropy.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xentropyai/xentropy-plugins.git",
+    "directory": "pi"
+  },
+  "bugs": {
+    "url": "https://github.com/xentropyai/xentropy-plugins/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi",
+    "xentropy",
+    "mcp"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/xentropy.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "files": [
+    "extensions/xentropy.ts",
+    "src/*.ts",
+    "skills/**/*.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "sync-skills": "node scripts/sync-skills.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.5.2",
+    "@types/node": "22.19.1",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

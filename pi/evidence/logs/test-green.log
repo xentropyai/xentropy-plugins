@@ -1,0 +1,30 @@
+
+> @xentropy/pi@0.1.0 test
+> node --import tsx --test --test-concurrency=1 tests/*.test.ts
+
+▶ @xentropy/pi extension
+  ✔ [H-C1] Given no XENTROPY_API_KEY, When a session starts, Then no tools are registered and a one-line hint is shown (2.149671ms)
+  ✔ [H-C2] Given a key and a server, When a session starts, Then each MCP tool is registered as xentropy_<tool> with its schema, description and annotations (385.004879ms)
+  ✔ [H-C3] Given a registered tool, When pi executes it, Then tools/call is forwarded and text, image and other content are mapped (196.542612ms)
+  ✔ [H-C4] Given the server returns isError, When the tool runs, Then pi gets an error result with the server's message (103.110263ms)
+  ✔ [H-C5] Given a running call, When pi aborts the signal, Then the call stops promptly with a cancellation error (117.971761ms)
+  ✔ [H-C6] Given tool annotations, When tools are registered, Then destructive tools (and tools without hints) carry a 'Changes or deletes data' note (94.742004ms)
+  ✔ [H-C7] Given XENTROPY_MCP_URL, When it is plain http on a non-loopback host, Then it is refused; https and loopback http are accepted (34.669526ms)
+  ✔ [H-C8] Given a key, When the extension talks to the server, Then it sends Authorization: Bearer <key> and never shows the key (67.768503ms)
+  ✔ [H-C9] Given the server is unreachable or rejects the key, When a session starts, Then it does not throw, registers no tools and shows a clear message (89.239508ms)
+  ✔ [H-C10] Given the server's tool list changes, When a new session starts, Then tools are listed again: new tools appear and withdrawn tools are hidden (Q17) (188.536941ms)
+  ✔ [H-C11] Given tool names with other characters or too long for providers, When registered, Then names use only [A-Za-z0-9_], stay within 64 characters and stay unique (108.550456ms)
+  ✔ [H-C12] Given the commands, When /xentropy-status and /xentropy-login run, Then status shows server, tool count and auth mode, and login shows setup steps and the API keys URL (93.144595ms)
+  ✔ [H-C13] Given the package entry point, When pi loads it, Then the default export is a factory that registers the commands (0.564782ms)
+✔ @xentropy/pi extension (1493.917685ms)
+✔ [H-C14] Given package.json, Then it is a safe, discoverable pi package (2.940023ms)
+✔ [H-C15] Given skills/, Then each skill folder has a SKILL.md whose name matches the folder (85.757888ms)
+ℹ tests 15
+ℹ suites 1
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9386.00543
+exit=0
