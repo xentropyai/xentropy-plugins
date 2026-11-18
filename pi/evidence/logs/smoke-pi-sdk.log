@@ -1,0 +1,13 @@
+pi-coding-agent VERSION=1.5.2
+extension load errors: []
+skills: xentropy-artifact-studio
+xentropy tools: xentropy_artifacts_list,xentropy_artifacts_trash
+active: xentropy_artifacts_list,xentropy_artifacts_trash
+call result: [{"type":"text","text":"ok {\"limit\":2}"}]
+notices:
+info: Xentropy: connected to http://127.0.0.1:44557/mcp with 2 tools.
+info: Xentropy server: http://127.0.0.1:44557/mcp
+Status: connected (xentropy-stub), 2 tools
+Auth: API key from XENTROPY_API_KEY (Bearer)
+SMOKE OK
+exit=0
