@@ -1,9 +1,10 @@
-# Written 2026-11-18 (agent harnesses P0/P3). It has not run yet: the repo is not pushed.
+# Validates manifests, skills and credential patterns, then runs the repo tests (npm test).
 name: ci
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
