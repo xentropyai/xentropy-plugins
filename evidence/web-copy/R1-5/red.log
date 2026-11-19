@@ -1,0 +1,119 @@
+$ node --test test/copy.test.mjs
+▶ copy accuracy (web-copy R1-5)
+  ✖ no file outside the Google Analytics skill lists Google Analytics as an available source (22.201957ms)
+  ✖ the Google Analytics skill description says it is coming soon (1.420513ms)
+  ✔ hand-written files never say "every source is read-only" (4.086592ms)
+  ⚠ generated skills never say "every source is read-only" (8.017409ms) # upstream: xentropy-connections skill in the monorepo packages/skills still says it; fix there, then sync
+  ✔ hand-written files make no "REST" claim (12.741341ms)
+  ✔ no file names Cursor or VS Code as a client (case-sensitive; nextCursor is fine) (1.217937ms)
+  ✔ no file claims MP4 or Motion export (12.606989ms)
+  ✖ plugin metadata descriptions start with the category line (1.290215ms)
+✖ copy accuracy (web-copy R1-5) (69.903583ms)
+ℹ tests 8
+ℹ suites 1
+ℹ pass 4
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 1
+ℹ duration_ms 504.25025
+
+✖ failing tests:
+
+test at test/copy.test.mjs:44:3
+✖ no file outside the Google Analytics skill lists Google Analytics as an available source (22.201957ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   "hermes/PR.md:25: > Adds Xentropy to the plugin catalog. Xentropy builds charts, tables and dashboards from the user's own connected data (PostgreSQL, OpenAPI, Google Sheets, Google Drive, Google Analytics).",
+  +   "hermes/plugin-catalog/xentropy.yaml:12: Google Sheets, Google Drive, Google Analytics) through Xentropy's hosted MCP server",
+  +   `plugins/xentropy/skills/xentropy-connections/SKILL.md:3: description: "Connects and reads the user's data sources (PostgreSQL, OpenAPI, Google Sheets, Google Drive, Google Analytics) as Xentropy datasets. Use when the user wants to connect a data source to Xentropy, see what a connection offers, preview or save data as a dataset, or recover from a connection or data error."`,
+  +   'plugins/xentropy/skills/xentropy-connections/SKILL.md:21: | `google-analytics` | Google Analytics reports | Owner consent in the browser |',
+  +   `skills/xentropy-connections/SKILL.md:3: description: "Connects and reads the user's data sources (PostgreSQL, OpenAPI, Google Sheets, Google Drive, Google Analytics) as Xentropy datasets. Use when the user wants to connect a data source to Xentropy, see what a connection offers, preview or save data as a dataset, or recover from a connection or data error."`,
+  +   'skills/xentropy-connections/SKILL.md:21: | `google-analytics` | Google Analytics reports | Owner consent in the browser |'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///root/xentropy/xentropy-plugins-copy/test/copy.test.mjs:48:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at node:internal/test_runner/test:1887:71
+      at node:internal/per_context/primordials:504:82
+      at new Promise (<anonymous>)
+      at new SafePromise (node:internal/per_context/primordials:478:3)
+      at node:internal/per_context/primordials:504:9
+      at Array.map (<anonymous>) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ "hermes/PR.md:25: > Adds Xentropy to the plugin catalog. Xentropy builds charts, tables and dashboards from the user's own connected data (PostgreSQL, OpenAPI, Google Sheets, Google Drive, Google Analytics).", "hermes/plugin-catalog/xentropy.yaml:12: Google Sheets, Google Drive, Google Analytics) through Xentropy's hosted MCP server", `plugins/xentropy/skills/xentropy-connections/SKILL.md:3: description: "Connects and reads the user's data sources (PostgreSQL, OpenAPI, Google Sheets, Google Drive, Google Analytics) as Xentropy datasets. Use when the user wants to connect a data source to Xentropy, see what a connection offers, preview or save data as a dataset, or recover from a connection or data error."`, 'plugins/xentropy/skills/xentropy-connections/SKILL.md:21: | `google-analytics` | Google Analytics reports | Owner consent in the browser |', `skills/xentropy-connections/SKILL.md:3: description: "Connects and reads the user's data sources (PostgreSQL, OpenAPI, Google Sheets, Google Drive, Google Analytics) as Xentropy datasets. Use when the user wants to connect a data source to Xentropy, see what a connection offers, preview or save data as a dataset, or recover from a connection or data error."`, 'skills/xentropy-connections/SKILL.md:21: | `google-analytics` | Google Analytics reports | Owner consent in the browser |' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/copy.test.mjs:51:3
+✖ the Google Analytics skill description says it is coming soon (1.420513ms)
+  AssertionError [ERR_ASSERTION]: plugins/xentropy/skills/xentropy-google-analytics/SKILL.md: description must say "coming soon"
+      at TestContext.<anonymous> (file:///root/xentropy/xentropy-plugins-copy/test/copy.test.mjs:56:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1889:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '"Turns GA4 reports from a connected Google Analytics property into Xentropy datasets, charts and dashboards (read-only). Use when the user asks about website or app traffic, users, sessions, conversions or other Google Analytics metrics."',
+    expected: /coming soon/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at test/copy.test.mjs:64:3
+⚠ generated skills never say "every source is read-only" (8.017409ms) # upstream: xentropy-connections skill in the monorepo packages/skills still says it; fix there, then sync
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   "plugins/xentropy/skills/xentropy-connections/SKILL.md:11: Discover, create and read the user's data sources. Every source is read-only.",
+  +   "skills/xentropy-connections/SKILL.md:11: Discover, create and read the user's data sources. Every source is read-only."
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///root/xentropy/xentropy-plugins-copy/test/copy.test.mjs:68:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ "plugins/xentropy/skills/xentropy-connections/SKILL.md:11: Discover, create and read the user's data sources. Every source is read-only.", "skills/xentropy-connections/SKILL.md:11: Discover, create and read the user's data sources. Every source is read-only." ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/copy.test.mjs:84:3
+✖ plugin metadata descriptions start with the category line (1.290215ms)
+  AssertionError [ERR_ASSERTION]: plugins/xentropy/plugin.json: Create data-backed charts, tables and dashboards from your own data with Xentropy, through the Xentropy remote MCP server.
+      at TestContext.<anonymous> (file:///root/xentropy/xentropy-plugins-copy/test/copy.test.mjs:96:60)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+exit=1
