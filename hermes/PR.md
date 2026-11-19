@@ -22,7 +22,7 @@ Recommendation: open **PR B** (plugin catalog). Keep PR A (`optional-mcps/xentro
 
 **Body:**
 
-> Adds Xentropy to the plugin catalog. Xentropy builds charts, tables and dashboards from the user's own connected data (PostgreSQL, OpenAPI, Google Sheets, Google Drive, Google Analytics).
+> Adds Xentropy to the plugin catalog. Xentropy is the analytics workspace for AI agents. It builds charts, tables and dashboards from the user's own connected data (PostgreSQL, OpenAPI, Google Sheets, Google Drive).
 >
 > - **Package:** Portable Agent Plugins v1 at `plugins/xentropy` in https://github.com/xentropyai/xentropy-plugins (`plugin.json`, `mcp.json`, `skills/`). No Python, no executables, no hooks.
 > - **Hermes surfaces:** one Streamable HTTP MCP server (`xentropy` → `https://api.xentropy.ai/mcp`) and seven read-only skills that declare `metadata.hermes.requires_toolsets: [mcp-xentropy]`.

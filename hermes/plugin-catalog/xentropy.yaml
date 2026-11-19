@@ -8,10 +8,10 @@ repo: https://github.com/xentropyai/xentropy-plugins
 sha: REPLACE_WITH_40_HEX_COMMIT_SHA
 subdir: plugins/xentropy
 description: >-
-  Build charts, tables and dashboards from your own connected data (PostgreSQL, OpenAPI,
-  Google Sheets, Google Drive, Google Analytics) through Xentropy's hosted MCP server
-  (Streamable HTTP, OAuth 2.1), with the xentropy-* workflow skills bundled. Portable Agent
-  Plugins v1 package (plugin.json + mcp.json + skills/). Disclosure: hosted-only connector with
+  Xentropy is the analytics workspace for AI agents. Build charts, tables and dashboards from
+  your own connected data (PostgreSQL, OpenAPI, Google Sheets, Google Drive) through Xentropy's
+  hosted MCP server (Streamable HTTP, OAuth 2.1), with the xentropy-* workflow skills bundled.
+  Portable Agent Plugins v1 package (plugin.json + mcp.json + skills/). Disclosure: hosted-only connector with
   no local code; every tool call goes to api.xentropy.ai, signed in as the user. Rows read from
   the user's connected sources are pulled into the session context, and so reach the user's
   model provider. Write tools create and change Xentropy artifacts, dashboards and datasets, and

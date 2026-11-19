@@ -1,0 +1,123 @@
+$ node --test test/copy.test.mjs
+▶ copy accuracy (web-copy R1-5)
+  ✔ no file outside the Google Analytics skill lists Google Analytics as an available source (18.303729ms)
+  ✔ the Google Analytics skill description says it is coming soon (0.698514ms)
+  ✔ hand-written files never say "every source is read-only" (4.653978ms)
+  ⚠ generated skills never say "every source is read-only" (4.525965ms) # upstream: xentropy-connections skill in the monorepo packages/skills still says it; fix there, then sync
+  ✔ hand-written files make no "REST" claim (2.489663ms)
+  ✔ no file names Cursor or VS Code as a client (case-sensitive; nextCursor is fine) (2.68544ms)
+  ✔ no file claims MP4 or Motion export (1.39274ms)
+  ✔ plugin metadata descriptions start with the category line (0.747458ms)
+✔ copy accuracy (web-copy R1-5) (37.493584ms)
+ℹ tests 8
+ℹ suites 1
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 1
+ℹ duration_ms 212.497172
+
+✖ failing tests:
+
+test at test/copy.test.mjs:64:3
+⚠ generated skills never say "every source is read-only" (4.525965ms) # upstream: xentropy-connections skill in the monorepo packages/skills still says it; fix there, then sync
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + [
+  +   "plugins/xentropy/skills/xentropy-connections/SKILL.md:11: Discover, create and read the user's data sources. Every source is read-only.",
+  +   "skills/xentropy-connections/SKILL.md:11: Discover, create and read the user's data sources. Every source is read-only."
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///root/xentropy/xentropy-plugins-copy/test/copy.test.mjs:68:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ "plugins/xentropy/skills/xentropy-connections/SKILL.md:11: Discover, create and read the user's data sources. Every source is read-only.", "skills/xentropy-connections/SKILL.md:11: Discover, create and read the user's data sources. Every source is read-only." ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+exit=0
+
+$ npm test   (summary lines; full todo trace shown above)
+▶ Hermes optional-mcps manifest (H-D P6)
+  ✔ [H-D1] Given the manifest draft, When parsed as YAML and checked with the upstream catalog rules, Then it is valid (83.586005ms)
+  ✔ [H-D2] Given default_enabled, When compared with the Xentropy tool snapshot, Then every tool exists, none is destructive, and reads plus core writes are on (90.637587ms)
+  ✔ [H-D3] Given every Hermes file, When URLs are listed, Then the endpoint and source are exact and only loopback uses http (67.684629ms)
+  ✔ [H-D4] Given broken manifests, When checked, Then each upstream rule reports (80.26052ms)
+✔ Hermes optional-mcps manifest (H-D P6) (323.513819ms)
+▶ Hermes config example (H-D P6)
+  ✔ [H-D5] Given the OAuth variant, When parsed, Then mcp_servers.xentropy has the url and auth oauth and no headers (94.066837ms)
+  ✔ [H-D6] Given the commented header variant, When uncommented, Then it sends Bearer ${XENTROPY_API_KEY} with trust untrusted and no literal key (116.885215ms)
+✔ Hermes config example (H-D P6) (212.996305ms)
+▶ Hermes README and PR (H-D P6)
+  ✔ [H-D7] Given the README, When read, Then it covers login, the well-known index on the web origin and the tap layout (0.769591ms)
+  ✔ [H-D8] Given PR.md, When read, Then it has a conventional title, the catalog-closed warning and owner steps (0.28424ms)
+  ✔ [H-D9] Given the plugin-catalog draft, When parsed, Then it points at the portable package and pins nothing yet (139.116346ms)
+✔ Hermes README and PR (H-D P6) (140.692623ms)
+▶ ClawHub skill xentropy (H-D P7)
+  ✔ [H-D10] Given the skill, When checked with the repo agentskills rules (setup section aside), Then it passes (5.490679ms)
+  ✔ [H-D11] Given the frontmatter, When read, Then metadata.openclaw names XENTROPY_API_KEY as primaryEnv with no hard requirements (2.380229ms)
+  ✔ [H-D12] Given the setup section, When read, Then it has the exact add and login commands for the user (0.362577ms)
+  ✔ [H-D13] Given skills that run things, When checked, Then the no-scripts rule reports each (3.78717ms)
+  ✔ [H-D14] Given the generated artifacts skill, When the ClawHub skill is rebuilt, Then the committed SKILL.md has no drift (0.52454ms)
+✔ ClawHub skill xentropy (H-D P7) (14.486062ms)
+▶ OpenClaw config example and plugin (H-D P7)
+  ✔ [H-D15] Given openclaw.json.example, When parsed, Then mcp.servers.xentropy is streamable-http with OAuth and no headers (0.396278ms)
+  ✔ [H-D16] Given the commented header variant, When uncommented, Then it sends the env key and only read-only tools (1.215893ms)
+  ✔ [H-D17] Given every OpenClaw file, When URLs are listed, Then only loopback uses http, and the plugin manifest stays deferred with notes (1.554245ms)
+✔ OpenClaw config example and plugin (H-D P7) (3.72627ms)
+▶ copy accuracy (web-copy R1-5)
+  ✔ no file outside the Google Analytics skill lists Google Analytics as an available source (10.340501ms)
+  ✔ the Google Analytics skill description says it is coming soon (0.749791ms)
+  ✔ hand-written files never say "every source is read-only" (9.703882ms)
+  ⚠ generated skills never say "every source is read-only" (5.74921ms) # upstream: xentropy-connections skill in the monorepo packages/skills still says it; fix there, then sync
+  ✔ hand-written files make no "REST" claim (3.194777ms)
+  ✔ no file names Cursor or VS Code as a client (case-sensitive; nextCursor is fine) (1.380953ms)
+  ✔ no file claims MP4 or Motion export (2.258485ms)
+  ✔ plugin metadata descriptions start with the category line (0.693466ms)
+✔ copy accuracy (web-copy R1-5) (59.52258ms)
+▶ xentropy-plugins repo (H-B P3/P4)
+  ✔ [H-B20] Given the repo, When validated, Then every manifest and skill passes (12.857197ms)
+  ✔ [H-B21] Given broken manifests, When validated, Then each rule reports (44.997419ms)
+  ✔ [H-B22] Given bad skills, When validated, Then the agentskills rules fail (4.376137ms)
+  ✔ [H-B23] Given the plugin folder, When the OpenAI zip is built, Then it holds the portable manifests and skills but no Claude dotfiles, hooks or .app.json (46.573044ms)
+  ✔ [H-B24] Given excluded paths, When filtered, Then hooks, .app.json and dotfiles are dropped (2.945291ms)
+✔ xentropy-plugins repo (H-B P3/P4) (116.634526ms)
+✔ [H-R1] Given a Hermes tap on this repo, when it reads skills/ at the root, then the root mirror equals plugins/xentropy/skills byte for byte (6.787364ms)
+✔ [H-R2] Given `pi install git:github.com/xentropyai/xentropy-plugins`, when pi reads the root package.json, then it finds the pi extension and skills under pi/ (0.525712ms)
+✔ [H-R3] Given the repo test script, when CI runs it, then the Hermes and OpenClaw suites run too (0.340753ms)
+ℹ tests 33
+ℹ suites 7
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 1
+ℹ duration_ms 865.953874
+✖ failing tests:
+⚠ generated skills never say "every source is read-only" (5.74921ms) # upstream: xentropy-connections skill in the monorepo packages/skills still says it; fix there, then sync
+exit=0
+
+$ npm run validate
+
+> validate
+> node scripts/validate.mjs
+
+xentropy-plugins: all manifests and skills valid
+exit=0
+
+$ node scripts/sync-skills.mjs /root/xentropy/ui-wc-release --check
+skills export up to date (11 files)
+exit=0
+
+$ node hermes/check.mjs
+exit=0

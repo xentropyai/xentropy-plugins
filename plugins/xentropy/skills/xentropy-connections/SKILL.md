@@ -1,6 +1,6 @@
 ---
 name: xentropy-connections
-description: "Connects and reads the user's data sources (PostgreSQL, OpenAPI, Google Sheets, Google Drive, Google Analytics) as Xentropy datasets. Use when the user wants to connect a data source to Xentropy, see what a connection offers, preview or save data as a dataset, or recover from a connection or data error."
+description: "Connects and reads the user's data sources (PostgreSQL, OpenAPI, Google Sheets, Google Drive) as Xentropy datasets. Use when the user wants to connect a data source to Xentropy, see what a connection offers, preview or save data as a dataset, or recover from a connection or data error."
 license: MIT
 compatibility: "Requires the Xentropy MCP server (https://api.xentropy.ai/mcp) connected as \"xentropy\"."
 metadata: {"version":"1.0.0","source":"xentropy","hermes":{"requires_toolsets":["mcp-xentropy"]},"openclaw":{"primaryEnv":"XENTROPY_API_KEY"}}
@@ -18,7 +18,7 @@ Discover, create and read the user's data sources. Every source is read-only.
 | `openapi` | GET operations of an OpenAPI spec | Credential connection |
 | `google-sheets` | Google Sheets spreadsheets | Owner consent in the browser |
 | `google-drive` | Google Drive CSV/JSON files | Owner consent in the browser |
-| `google-analytics` | Google Analytics reports | Owner consent in the browser |
+| `google-analytics` | Google Analytics reports (coming soon on xentropy.ai, not yet available) | Owner consent in the browser |
 | `raw` | Inline rows or CSV | Dataset definition only |
 
 `http-json` (REST JSON) is legacy: existing connections read, new ones are

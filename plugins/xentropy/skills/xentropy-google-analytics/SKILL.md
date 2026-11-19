@@ -1,6 +1,6 @@
 ---
 name: xentropy-google-analytics
-description: "Turns GA4 reports from a connected Google Analytics property into Xentropy datasets, charts and dashboards (read-only). Use when the user asks about website or app traffic, users, sessions, conversions or other Google Analytics metrics."
+description: "Describes the Google Analytics connection, which is coming soon on xentropy.ai and not yet available: once enabled it turns GA4 reports into Xentropy datasets, charts and dashboards (read-only). Use when the user asks about Google Analytics data, to explain that the connection is not available yet."
 license: MIT
 compatibility: "Requires the Xentropy MCP server (https://api.xentropy.ai/mcp) connected as \"xentropy\"."
 metadata: {"version":"1.0.0","source":"xentropy","hermes":{"requires_toolsets":["mcp-xentropy"]},"openclaw":{"primaryEnv":"XENTROPY_API_KEY"}}

@@ -2,7 +2,7 @@
   "name": "xentropy",
   "displayName": "Xentropy",
   "version": "0.1.0",
-  "description": "Create data-backed charts, tables and dashboards from your own data with Xentropy, through the Xentropy remote MCP server.",
+  "description": "Xentropy is the analytics workspace for AI agents. Create data-backed charts, tables and dashboards from your own data through the Xentropy remote MCP server.",
   "author": {
     "name": "Xentropy",
     "url": "https://xentropy.ai"
